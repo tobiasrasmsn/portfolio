@@ -47,7 +47,7 @@ export default function Navigation() {
             html.offsetHeight
         );
         // const heightWithMargin = height - 1200;
-        if (window.scrollY > 200) {
+        if (window.scrollY > 100) {
             setIsVisible(true);
         } else {
             setIsVisible(false);

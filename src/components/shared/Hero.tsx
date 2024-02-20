@@ -77,10 +77,10 @@ export default function Hero({ fullHeight }: NavigationInterface) {
                 </ul>
             </div>
             <motion.div
-                className="w-full relative top-[62%] -translate-y-[100%] block md:hidden"
+                className="w-full relative -translate-y-[100%] block md:hidden"
+                style={{ top: "calc(100svh - 225px)" }}
                 initial={{ translateY: "0%", opacity: 0 }}
-                whileInView={{ translateY: "-100%", opacity: 1 }}
-                viewport={{ once: true }}
+                animate={{ translateY: "-100%", opacity: 1 }}
                 transition={{ type: "spring", duration: 1.5 }}
             >
                 <AspectRatio ratio={14 / 9}>

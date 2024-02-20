@@ -33,20 +33,20 @@ export default function TextSection({
             <div className="flex flex-col md:flex-row justify-between w-full gap-5 md:gap-20 overflow-hidden">
                 <motion.h2
                     className="text-4xl font-medium text-balance w-[100%] md:w-[50%]"
-                    initial={{ translateX: "-100%", opacity: 0 }}
+                    initial={{ translateX: "-50%", opacity: 0 }}
                     whileInView={{ translateX: 0, opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ type: "spring", duration: 1.5 }}
+                    transition={{ type: "spring", duration: 2 }}
                 >
                     {heading}
                 </motion.h2>
                 <motion.p
                     dangerouslySetInnerHTML={{ __html: content }}
                     className="text-xl text-pretty max-w-[450px] md:max-w-[100%] md:w-[50%] ml-auto "
-                    initial={{ translateX: "100%", opacity: 0 }}
+                    initial={{ translateX: "50%", opacity: 0 }}
                     whileInView={{ translateX: 0, opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ type: "spring", duration: 1.5 }}
+                    transition={{ type: "spring", duration: 2 }}
                 ></motion.p>
             </div>
         </div>
