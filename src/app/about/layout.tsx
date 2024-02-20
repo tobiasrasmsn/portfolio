@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Urbanist as FontSans } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Navigation from "@/components/shared/Navigation";
 import { cn } from "@/lib/utils";
 import PageShadow from "@/components/shared/PageShadow";
