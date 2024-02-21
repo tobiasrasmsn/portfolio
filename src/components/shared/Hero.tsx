@@ -61,6 +61,11 @@ export default function Hero({ fullHeight }: NavigationInterface) {
                             </HoverCardContent>
                         </HoverCard>
                     </li>
+                    <li className="block md:hidden">
+                        <Link href="/contact">
+                            <Button>Get in touch</Button>
+                        </Link>
+                    </li>
                     <li>
                         <p className="w-[70%] md:w-auto hidden md:block text-pretty">
                             CRAFTING INTUITIVE EXPERIENCES,{" "}
@@ -74,7 +79,7 @@ export default function Hero({ fullHeight }: NavigationInterface) {
                         <h2 className="block md:hidden">DEV/DESIGNER</h2>
                     </li>
 
-                    <li>
+                    <li className="hidden md:block">
                         <Link href="/contact">
                             <Button>Get in touch</Button>
                         </Link>
