@@ -7,6 +7,8 @@ import {
     HoverCardTrigger,
 } from "../ui/hover-card";
 import { motion } from "framer-motion";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 interface NavigationInterface {
     fullHeight: boolean;
@@ -34,7 +36,7 @@ export default function Hero({ fullHeight }: NavigationInterface) {
         <section
             className={`flex justify-start items-start ${
                 fullHeight ? "h-screen" : "h-[100%]"
-            } flex-col  mt-[50px] min-h-[750px]`}
+            } flex-col  mt-[50px] min-h-[600px] xs:min-h-[800px]`}
         >
             <h1 className="text-[15.5vw] md:text-[12vw] leading-[15.5vw] md:leading-[12vw]">
                 TOBIAS <br />
@@ -43,21 +45,6 @@ export default function Hero({ fullHeight }: NavigationInterface) {
 
             <div className="w-[100%] md:w-[68vw]">
                 <ul className="flex flex-row justify-between gap-5 w-[100%] text-xl">
-                    <li>
-                        <p className="w-[70%] md:w-auto hidden md:block text-pretty">
-                            CRAFTING INTUITIVE EXPERIENCES,{" "}
-                            <br className="hidden md:block" /> ELEVATING DIGITAL
-                            INNOVATION.
-                            <br className="hidden md:block" /> EXPLORE THE
-                            FUSION OF ART AND
-                            <br className="hidden md:block" /> FUNCTIONALITY IN
-                            EVERY PIXEL.
-                        </p>
-                        <h2 className="block md:hidden">2003</h2>
-                    </li>
-                    <li>
-                        <h2>DEV/DESIGNER</h2>
-                    </li>
                     <li className="hidden md:block">
                         <HoverCard>
                             <HoverCardTrigger>
@@ -74,11 +61,29 @@ export default function Hero({ fullHeight }: NavigationInterface) {
                             </HoverCardContent>
                         </HoverCard>
                     </li>
+                    <li>
+                        <p className="w-[70%] md:w-auto hidden md:block text-pretty">
+                            CRAFTING INTUITIVE EXPERIENCES,{" "}
+                            <br className="hidden md:block" /> ELEVATING DIGITAL
+                            INNOVATION.
+                            <br className="hidden md:block" /> EXPLORE THE
+                            FUSION OF ART AND
+                            <br className="hidden md:block" /> FUNCTIONALITY IN
+                            EVERY PIXEL.
+                        </p>
+                        <h2 className="block md:hidden">DEV/DESIGNER</h2>
+                    </li>
+
+                    <li>
+                        <Link href="/contact">
+                            <Button>Get in touch</Button>
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <motion.div
                 className="w-full relative -translate-y-[100%] block md:hidden"
-                style={{ top: "calc(100svh - 225px)" }}
+                style={{ top: "calc(100% - 225px)" }}
                 initial={{ translateY: "0%", opacity: 0 }}
                 animate={{ translateY: "-100%", opacity: 1 }}
                 transition={{ type: "spring", duration: 1.5 }}

@@ -13,6 +13,9 @@ export default function Navigation() {
     const toggleMenu = () => {
         setIsOpen((prevOpen) => !prevOpen);
     };
+    const toggleVisible = () => {
+        setIsVisible((prevOpen) => !prevOpen);
+    };
     const menuVariants = {
         initial: {
             translateX: "-100%",
@@ -61,6 +64,10 @@ export default function Navigation() {
             window.removeEventListener("scroll", toggleVisibility);
         };
     }, []);
+    const handleLinkClick = () => {
+        // Close the mobile navigation sidebar
+        window.dispatchEvent(new CustomEvent("menuToggle"));
+    };
     const toggleMode = () => {};
     return (
         <div>
@@ -91,39 +98,55 @@ export default function Navigation() {
                     >
                         <motion.ul className="flex flex-col justify-center items-center gap-5">
                             <motion.li>
-                                <Link
-                                    onClick={toggleMenu}
-                                    href="/"
-                                    className="text-xl"
-                                >
-                                    Home
+                                <Link href="/" passHref legacyBehavior>
+                                    <a
+                                        onClick={() => {
+                                            toggleMenu();
+                                            handleLinkClick();
+                                        }}
+                                        className="text-xl"
+                                    >
+                                        Home
+                                    </a>
                                 </Link>
                             </motion.li>
                             <motion.li>
-                                <Link
-                                    onClick={toggleMenu}
-                                    href="/about"
-                                    className="text-xl"
-                                >
-                                    About
+                                <Link href="/about" passHref legacyBehavior>
+                                    <a
+                                        onClick={() => {
+                                            toggleMenu();
+                                            handleLinkClick();
+                                        }}
+                                        className="text-xl"
+                                    >
+                                        About
+                                    </a>
                                 </Link>
                             </motion.li>
                             <motion.li>
-                                <Link
-                                    onClick={toggleMenu}
-                                    href="/projects"
-                                    className="text-xl"
-                                >
-                                    Projects
+                                <Link href="/projects" passHref legacyBehavior>
+                                    <a
+                                        onClick={() => {
+                                            toggleMenu();
+                                            handleLinkClick();
+                                        }}
+                                        className="text-xl"
+                                    >
+                                        Projects
+                                    </a>
                                 </Link>
                             </motion.li>
                             <motion.li>
-                                <Link
-                                    onClick={toggleMenu}
-                                    href="/contact"
-                                    className="text-xl"
-                                >
-                                    Contact
+                                <Link href="/contact" passHref legacyBehavior>
+                                    <a
+                                        onClick={() => {
+                                            toggleMenu();
+                                            handleLinkClick();
+                                        }}
+                                        className="text-xl"
+                                    >
+                                        Contact
+                                    </a>
                                 </Link>
                             </motion.li>
                             <motion.li className="cursor-pointer">

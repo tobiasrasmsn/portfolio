@@ -1,8 +1,17 @@
+"use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Hamburger() {
     const [isOpen, setIsOpen] = useState(false);
+    useEffect(() => {
+        const handleMenuToggle = () => setIsOpen(!isOpen);
+
+        window.addEventListener("menuToggle", handleMenuToggle);
+
+        // Don't forget to clean up
+        return () => window.removeEventListener("menuToggle", handleMenuToggle);
+    }, [isOpen]); // dependency array
     return (
         <motion.button
             onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
