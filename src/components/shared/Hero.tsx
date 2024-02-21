@@ -44,7 +44,7 @@ export default function Hero({ fullHeight }: NavigationInterface) {
             </h1>
 
             <div className="w-[100%] md:w-[68vw]">
-                <ul className="flex flex-row justify-between gap-5 w-[100%] text-xl">
+                <ul className="flex flex-row justify-between items-center md:items-start gap-8 mt-2 w-[100%] text-xl">
                     <li className="hidden md:block">
                         <HoverCard>
                             <HoverCardTrigger>
@@ -63,7 +63,9 @@ export default function Hero({ fullHeight }: NavigationInterface) {
                     </li>
                     <li className="block md:hidden">
                         <Link href="/contact">
-                            <Button>Get in touch</Button>
+                            <Button className="rounded-none">
+                                Get in touch
+                            </Button>
                         </Link>
                     </li>
                     <li>
@@ -81,7 +83,9 @@ export default function Hero({ fullHeight }: NavigationInterface) {
 
                     <li className="hidden md:block">
                         <Link href="/contact">
-                            <Button>Get in touch</Button>
+                            <Button className="rounded-none">
+                                Get in touch
+                            </Button>
                         </Link>
                     </li>
                 </ul>
